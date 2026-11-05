@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Request a cleaning and manage your Clean by Lesa bookings.">
+  <title>My Bookings | Clean by Lesa LLC</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="portal-page" data-portal="account">
+  <header id="portal-header">
+    <div class="portal-top">
+      <a class="logo" href="index.html" aria-label="Clean by Lesa home"><div><div class="logo-mark">CLEAN <span class="diamonds">◆ ◆ ◆</span></div><small>Professional Cleaning Service</small></div></a>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a><a href="residential.html">Services</a><a href="account.html">My account</a><a href="https://wa.me/19178255246">WhatsApp</a><a class="btn outline" href="login.html">Sign in</a>
+      </nav>
+    </div>
+  </header>
+  <main class="portal-wrap">
+    <div class="eyebrow">Customer portal</div>
+    <h1 class="portal-title">Request a cleaning<br><span>and track your booking.</span></h1>
+    <p class="lead">Sign in, upload at least one photo of the space, and submit your cleaning request. A $50 deposit is required. Pay using the Zelle QR code shown with your request, then upload your payment screenshot. Lesa will verify it and contact you to discuss the cleaning.</p>
+    <div id="config-note" class="notice" role="status" aria-live="polite"></div>
+    <div class="portal-columns account-columns">
+      <section class="portal-card">
+        <div class="eyebrow">Start a booking</div><h2>Request a cleaning</h2>
+        <form id="booking-form" class="portal-form">
+          <div class="portal-form-grid">
+            <label class="field">Service type<select name="service_type"><option>Residential</option><option>Commercial</option></select></label>
+            <label class="field">Package<select name="package_name"><option>Standard</option><option>Semi-Deep</option><option>Deep</option><option>Custom</option></select></label>
+            <label class="field">Frequency<select name="frequency"><option>One-time</option><option>Daily</option><option>Multiple times weekly</option><option>Weekly</option><option>Bi-weekly</option><option>Monthly</option></select></label>
+            <label class="field">Preferred date<input type="date" name="requested_date"></label>
+            <label class="field field-wide">Preferred arrival window<select name="preferred_window"><option>Morning (8 AM–12 PM)</option><option>Afternoon (12 PM–4 PM)</option><option>Flexible</option><option>After-hours</option></select></label>
+            <label class="field field-wide">Street address<input required name="address" autocomplete="street-address"></label>
+            <label class="field">City<input required name="city" autocomplete="address-level2"></label>
+            <label class="field">ZIP code<input required name="zip_code" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" autocomplete="postal-code"></label>
+            <fieldset class="addon-field field-wide">
+              <legend>Choose add-ons (optional)</legend>
+              <div class="addon-grid">
+                <label><input type="checkbox" name="add_ons" value="Interior Refrigerator"><span>Interior Refrigerator</span></label>
+                <label><input type="checkbox" name="add_ons" value="Interior Oven"><span>Interior Oven</span></label>
+                <label><input type="checkbox" name="add_ons" value="Interior Cabinets"><span>Interior Cabinets</span></label>
+                <label><input type="checkbox" name="add_ons" value="Interior Windows"><span>Interior Windows</span></label>
+                <label><input type="checkbox" name="add_ons" value="Baseboards"><span>Baseboards</span></label>
+                <label><input type="checkbox" name="add_ons" value="Wall Washing"><span>Wall Washing</span></label>
+                <label><input type="checkbox" name="add_ons" value="Blinds"><span>Blinds</span></label>
+                <label><input type="checkbox" name="add_ons" value="Linen Change"><span>Linen Change</span></label>
+                <label><input type="checkbox" name="add_ons" value="Pet Hair Removal (heavy shedding)"><span>Pet Hair Removal (heavy shedding)</span></label>
+                <label><input type="checkbox" name="add_ons" value="Steam Cleaning"><span>Steam Cleaning</span></label>
+                <label><input type="checkbox" name="add_ons" value="Disinfection & Sanitizing"><span>Disinfection & Sanitizing</span></label>
+                <label><input type="checkbox" name="add_ons" value="Decluttering/Organizing"><span>Decluttering/Organizing</span></label>
+                <label><input type="checkbox" name="add_ons" value="Reorganization"><span>Reorganization</span></label>
+              </div>
+            </fieldset>
+            <label class="field field-wide">Photos of the space (required)<input type="file" name="photos" accept="image/jpeg,image/png,image/webp,image/gif" required multiple><small>Upload 1–5 photos (JPG, PNG, WebP, or GIF). Up to 5 MB each and 15 MB total.</small></label>
+            <label class="field field-wide">Notes<textarea name="notes" placeholder="Access details or anything you would like us to know"></textarea></label>
+          </div>
+          <button class="btn" type="submit">Send booking request</button>
+          <p id="booking-message" class="notice" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section>
+        <div class="eyebrow">Your requests</div><h2>Bookings & deposit</h2>
+        <div id="booking-list" class="booking-list" aria-live="polite"><div class="portal-card">Your cleaning requests and $50 deposit status will appear here after you sign in.</div></div>
+      </section>
+    </div>
+    <div class="portal-footnote">Questions about your booking? Text Lesa at <a href="sms:+19178255246">917.825.5246</a>. The $50 deposit is the only payment collected through this website; Lesa will discuss the remaining service details with you directly.</div>
+  </main>
+  <script>
+    if (location.protocol === 'file:') {
+      const note = document.getElementById('config-note');
+      note.innerHTML = 'You opened this file directly. First double-click <b>Start Website.bat</b>, then <a href="http://localhost:3101/account.html">open the customer account page here</a>.';
+      note.className = 'notice warn';
+      document.querySelectorAll('#booking-form button').forEach(button => button.disabled = true);
+    }
+  </script>
+  <script defer src="js/portal.js"></script>
+</body>
+</html>
+

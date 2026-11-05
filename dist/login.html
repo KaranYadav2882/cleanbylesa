@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sign in to your Clean by Lesa account.">
+  <title>Sign In | Clean by Lesa LLC</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="portal-page" data-portal="login">
+  <header id="portal-header"><div class="portal-top"><a class="logo" href="index.html"><div><div class="logo-mark">CLEAN <span class="diamonds">◆ ◆ ◆</span></div><small>Professional Cleaning Service</small></div></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="residential.html">Services</a><a href="account.html">My bookings</a><a href="signup.html">Create account</a><a href="https://wa.me/19178255246">WhatsApp</a></nav></div></header>
+  <main class="portal-wrap" style="max-width:680px">
+    <div class="eyebrow">Customer portal</div><h1 class="portal-title">Welcome <span>back.</span></h1>
+    <p class="lead">Sign in to request a cleaning and check your quote or Zelle payment status.</p>
+    <div id="config-note" class="notice"></div><p id="auth-message" class="notice" role="status" aria-live="polite"></p>
+    <section class="portal-card"><form id="login-form" class="portal-form">
+      <label class="field">Email<input required type="email" name="email" autocomplete="email"></label>
+      <label class="field">Password<input required type="password" name="password" autocomplete="current-password"></label>
+      <button class="btn" type="submit">Sign in</button>
+    </form><p class="muted">New to Clean by Lesa? <a href="signup.html">Create an account</a></p></section>
+  </main>
+  <script>if(location.protocol==='file:'){const n=document.getElementById('config-note');n.innerHTML='Start the website with <b>node server.js</b>, then open <a href="http://localhost:3101/login.html">the sign in page</a>.';n.className='notice warn';document.querySelectorAll('form button').forEach(b=>b.disabled=true)}</script>
+  <script defer src="js/portal.js"></script>
+</body>
+</html>

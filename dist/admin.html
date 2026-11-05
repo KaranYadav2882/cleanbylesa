@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Private booking management for Clean by Lesa LLC.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Login & Dashboard | Clean by Lesa LLC</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/portal.css">
+  <style>#admin-dashboard[hidden],#admin-login[hidden]{display:none!important}</style>
+</head>
+<body class="portal-page" data-portal="admin">
+  <header id="portal-header"><div class="portal-top"><a class="logo" href="index.html"><div><div class="logo-mark">CLEAN <span class="diamonds">◆ ◆ ◆</span></div><small>Professional Cleaning Service</small></div></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="account.html">Customer account</a></nav></div></header>
+  <main class="portal-wrap portal-admin">
+    <section id="admin-login" class="portal-card" style="max-width:560px;margin:40px auto">
+      <div class="eyebrow">Lesa only</div><h1 class="portal-title">Admin <span>sign in</span></h1>
+      <p>Use the admin email and temporary password shown in the Start Website window the first time it ran.</p>
+      <p id="admin-login-message" class="notice" role="status" aria-live="polite"></p>
+      <form id="admin-login-form" class="portal-form">
+        <label class="field">Admin email<input type="email" name="email" value="cleanbylesa@gmail.com" autocomplete="username" required></label>
+        <label class="field">Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="btn" type="submit">Sign in to admin panel</button>
+      </form>
+    </section>
+    <div id="admin-dashboard" hidden>
+      <div class="eyebrow">Private staff area</div><h1 class="portal-title">Booking <span>dashboard</span></h1>
+      <p class="lead">Review each booking and customer photo. Check the Zelle payment screenshot and verify the $50 deposit in your bank before setting payment status to Paid. Set booking status to Scheduled after agreeing on an appointment; otherwise leave it Not Scheduled.</p>
+      <div id="config-note" class="notice"></div>
+      <div class="admin-toolbar"><p>Every request includes at least one uploaded photo of the space.</p><button class="btn outline" id="refresh-admin">Refresh bookings</button></div>
+      <section><div class="eyebrow">Account booking requests</div><h2>Bookings & $50 deposit review</h2><div id="admin-content" class="booking-list" aria-live="polite">Sign in to load bookings.</div></section>
+      <section class="portal-card" style="margin-top:40px"><h2>Change admin password</h2><p>Choose a new password for your administrator account.</p><form id="admin-password-form" class="admin-edit"><label class="field">New password<input type="password" name="password" minlength="8" required autocomplete="new-password"></label><label class="field">Confirm password<input type="password" name="confirm" minlength="8" required autocomplete="new-password"></label><button class="btn" type="submit">Change password</button><span id="password-message" class="notice" role="status"></span></form></section>
+    </div>
+  </main>
+  <script>if(location.protocol==='file:'){const n=document.getElementById('admin-login-message');n.innerHTML='Double-click <b>Start Website.bat</b>, then <a href="http://localhost:3101/admin.html">open the admin login here</a>.';n.className='notice warn';document.querySelectorAll('form button').forEach(b=>b.disabled=true)}</script>
+  <script defer src="js/portal.js"></script>
+</body>
+</html>
+
+

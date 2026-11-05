@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Create a Clean by Lesa customer account.">
+  <title>Create Account | Clean by Lesa LLC</title>
+  <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/portal.css">
+</head>
+<body class="portal-page" data-portal="signup">
+  <header id="portal-header"><div class="portal-top"><a class="logo" href="index.html"><div><div class="logo-mark">CLEAN <span class="diamonds">◆ ◆ ◆</span></div><small>Professional Cleaning Service</small></div></a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="residential.html">Services</a><a href="account.html">My bookings</a><a href="login.html">Sign in</a><a href="https://wa.me/19178255246">WhatsApp</a></nav></div></header>
+  <main class="portal-wrap" style="max-width:680px">
+    <div class="eyebrow">Customer portal</div><h1 class="portal-title">Create your <span>account.</span></h1>
+    <p class="lead">Create an account to request a cleaning, follow your quote, and pay by Zelle when your payment request is ready.</p>
+    <div id="config-note" class="notice"></div><p id="auth-message" class="notice" role="status" aria-live="polite"></p>
+    <section class="portal-card"><form id="signup-form" class="portal-form">
+      <label class="field">Full name<input required name="name" autocomplete="name"></label>
+      <label class="field">Phone<input required type="tel" name="phone" autocomplete="tel"></label>
+      <label class="field">Email<input required type="email" name="email" autocomplete="email"></label>
+      <label class="field">Password <small>(at least 8 characters)</small><input required minlength="8" type="password" name="password" autocomplete="new-password"></label>
+      <button class="btn" type="submit">Create account</button>
+    </form><p class="muted">Already have an account? <a href="login.html">Sign in</a></p></section>
+    <p class="muted small">Zelle payments are sent from your bank. Confirm the recipient details before paying.</p>
+  </main>
+  <script>if(location.protocol==='file:'){const n=document.getElementById('config-note');n.innerHTML='Start the website with <b>node server.js</b>, then open <a href="http://localhost:3101/signup.html">the signup page</a>.';n.className='notice warn';document.querySelectorAll('form button').forEach(b=>b.disabled=true)}</script>
+  <script defer src="js/portal.js"></script>
+</body>
+</html>
